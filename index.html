@@ -1,0 +1,117 @@
+<!DOCTYPEhtml>
+<html>
+		<head>
+
+		<title>QA Cinemas</title>
+		<link rel="stylesheet" type="text/css"
+		 href="css/style.css">
+		</head>
+
+		<body>
+			<h1>Welcome to QA Cinemas</h1>
+
+			<h4>What day would you like to visit the cinema?</h4>
+		
+			<form id = "form1">
+			<div>
+				<label>Please select a day</label>
+				<select id= "day" onchange = "dayOfWeek">
+					<option value = "1">Monday</option>
+					<option value = "2">Tuesday</option>
+					<option value = "3">Wednesday</option>
+					<option value = "4">Thursday</option>
+					<option value = "5">Friday</option>
+					<option value = "6">Saturday</option>
+					<option value = "7">Sunday</option>
+				</select>
+			</div>
+			</form>
+
+			<h3> Special offer on Wednesdays £2 off every ticket! <h3>
+
+				<h4>Add tickets to checkout:</h4>
+
+			<form id = "form2">
+				<div>
+					<label> Standard Ticket £8</label>
+					<button type= "button" onclick="add(8)">Add</button>
+			
+				</div>
+			</form>
+
+				<br>
+			<form id = "form3">
+
+				<div>
+
+					<label> OAP Ticket £6</label>
+					<button type= "button" onclick="add(6)">Add</button>
+					
+				</div>
+			</form>
+				<br>
+			<form id = "form4">
+
+				<div>
+					<label> Student Ticket £6</label>
+					<button type= "button" onclick="add(6)">Add</button>
+					
+				</div>
+			</form>
+				<br>
+
+			<form id = "form5">
+
+				<div>
+					<label> Child Ticket £4</label>
+					<button type= "button" onclick="add(4)">Add</button>
+					
+				</div>
+			</form>
+
+			<br>
+
+				<div>
+					<button type= "button" onclick="refresh()">Clear</button>
+				</div>
+
+				<br>
+
+
+
+			<script>
+			var totalCost = 0;
+		
+			
+			function add(A) { 
+
+				var day = document.getElementById("day").value;;
+				
+
+				if (day == 3) { totalCost = totalCost + (A - 2);
+			    document.getElementById("Total").innerHTML = "Total cost of tickets: £" + totalCost; }
+			    else { totalCost = totalCost + A;
+			    document.getElementById("Total").innerHTML = "Total cost of tickets: £" + totalCost; }
+			}
+			
+
+			function refresh(A) { 
+
+				totalCost = 0;
+			    document.getElementById("Total").innerHTML = "Total cost of tickets: £" + totalCost;
+			}
+
+			
+
+
+
+			</script>
+
+			<p id = "Total">Total cost of tickets: £0</p>
+
+			
+
+		</body>
+
+
+</html>
